@@ -8,19 +8,19 @@
 ## Date Modified: 
 ##
 ## Set WD
-setwd("D:/Curiosity/Exp2_sequential/data/Rawdata/preCombi/") # Set working directory to data location
+setwd("<set working directory here>") # Set working directory to data location
 
 ## open up all of the .csv files within the directory
-temp = list.files(pattern="*curSpaOneLine.csv")
+temp = list.files(pattern="*<filename>") # the * symbol allows your to ignore all text preceding <filename>, say participant numbers
 All <- lapply(temp,function(i){
   read.csv(i, header=TRUE)
 })
 
-## create a dataframe with all the data in one
+## create a dataframe with all the data in one and bind them all by rows, rather than columns
 df <- do.call(rbind.data.frame, All)
 
 ## save into one big dataframe
-write.csv(df,"D:/Curiosity/Exp2_sequential/data/curSpaPreMMNaN.csv", row.names=FALSE)
+write.csv(df,"<output file directory/filename.csv>", row.names=FALSE)
 
 ## empty lists ####
 rm(list = ls())
