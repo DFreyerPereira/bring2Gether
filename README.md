@@ -1,2 +1,2 @@
 # bring2Gether
-r code that opens and collates files with similar name structure
+This is an r code that opens .csv files with a similar name structure and given that they are the same size will put them together by the rows
